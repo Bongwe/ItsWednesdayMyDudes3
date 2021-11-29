@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
+    public AudioSource jumpAudio;
 
     private bool onGround;
 
@@ -26,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
        if (Input.GetMouseButtonDown(0) && onGround)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 8);
+            rb.velocity = new Vector2(rb.velocity.x, 5);
+            jumpAudio.Play();
         }
     }
 }
